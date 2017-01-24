@@ -25,7 +25,7 @@ A subset of criminal data recorded by the FBI is analyzed in this report.  The d
 * **Latitude:** the latitude of the location at which the crime occurred
 * **Longitude:** the longitude of the location at which the crime occurred
 
-##Loading the Data
+###Loading the Data
 Read the dataset mvtWeek1.csv into a dataframe called "mvt".
 
 ```{r load}
@@ -33,12 +33,34 @@ setwd("~/Crime")
 mvt <- read.csv("mvtWeek1.csv")
 ```
 
-## Including Plots
+###Display str information
 
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r str}
+str(mvt)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+###Exploring the data variables
+
+The maximum ID number is `r max(mvt$ID)`.
+```{r explore}
+max(mvt$ID)
+min(mvt$Beat)
+sum(mvt$Arrest == TRUE)
+sum(mvt$LocationDescription == "ALLEY")
+```
+
+###Make the date variable an R date
+
+The dates are in Month/Day/Year Hour:Minute format.  For example, the first date entry is `r mvt$Date[1]`.
+
+```{r}
+DateConvert = as.Date(strptime(mvt$Date, "%m/%d/%y %H:%M"))
+median(DateConvert)
+
+#Extract Month and Day and add to mvt dataframe
+mvt$Month <- months(DateConvert)
+mvt$Day <- weekdays(DateConvert)
+#Replace original date variable with converted dates
+mvt$Date <- DateConvert
+```
+
