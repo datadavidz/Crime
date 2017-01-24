@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Analysis of Motor Vehicle Theft in Chicago
 
-A subset of criminal data recorded by the FBI is analyzed in this report.  The data is for motor vehicle thefts in Chicago since 2001. A description of the variables follows:
+A subset of criminal data recorded by the FBI is analyzed in this report.  The data is for motor vehicle thefts in Chicago from 2001 to 2012. A description of the variables follows:
   
 * **ID:** a unique identifier for each observation
 * **Date:** the date the crime occurred
@@ -63,4 +63,28 @@ mvt$Day <- weekdays(DateConvert)
 #Replace original date variable with converted dates
 mvt$Date <- DateConvert
 ```
+Motor vehicle crimes by month:
+```{r}
+table(mvt$Month)
+```
+The month with the fewest motor vehicle thefts was February.
+
+Motor vehicle thefts by weekday:
+```{r}
+table(mvt$Day)
+```
+The weekday with the most motor vehicle thefts was Friday.
+
+#Visualizing the dataset
+```{r}
+hist(mvt$Date, breaks=100)
+```
+
+Motor vehicle thefts appear to be trending down over this time period.
+
+```{r}
+boxplot(mvt$Date ~ mvt$Arrest)
+```
+
+More arrests appear to be occurring in the beginning of the time period.
 
