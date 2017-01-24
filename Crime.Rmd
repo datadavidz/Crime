@@ -1,0 +1,44 @@
+---
+title: "Crime"
+author: "datadavidz"
+date: "January 24, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Analysis of Motor Vehicle Theft in Chicago
+
+A subset of criminal data recorded by the FBI is analyzed in this report.  The data is for motor vehicle thefts in Chicago since 2001. A description of the variables follows:
+  
+* **ID:** a unique identifier for each observation
+* **Date:** the date the crime occurred
+* **LocationDescription:** the location where the crime occurred
+* **Arrest:** whether or not an arrest was made for the crime (TRUE if an arrest was made and FALSE if no arrest made)
+* **Domestic:** whether or not the crime was a domestic crime meaning that it was committed against a family member (TRUE if it was domestic and FALSE if it was not domestic)
+* **Beat:** the area or "beat" in which the crime occurred. This is the smallest regional division defined by the Chicago police department
+* **District:** the police district in which the crime occurred.  Each district is composed of many beats and are defined by the Chicago Police Department.
+* **CommunityArea:** the community area in which the crime occurred.  Since the 1920s, Chicago has been divided into what are called "community areas" of which there are now 77.  The community areas were devised in an attempt to create socially homogeneous regions.
+* **Year:** the year in which the crime occurred
+* **Latitude:** the latitude of the location at which the crime occurred
+* **Longitude:** the longitude of the location at which the crime occurred
+
+##Loading the Data
+Read the dataset mvtWeek1.csv into a dataframe called "mvt".
+
+```{r load}
+setwd("~/Crime")
+mvt <- read.csv("mvtWeek1.csv")
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
