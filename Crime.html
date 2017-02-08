@@ -209,6 +209,215 @@ mvt$Date &lt;- DateConvert</code></pre>
 <pre class="r"><code>boxplot(mvt$Date ~ mvt$Arrest)</code></pre>
 <p><img src="data:image/png;base64,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K6k8rOjTM4mfr0p5+I/l4//3fkAt/FACOqP3Avpwln77v1cn6NUX3p09zDg8Xv1++kXnKKtfBPT4n8tvb39ZQK9GQGf0XkAPv35xnt5+4e35A9SnmjpHif0qoOcrLKB7ENAZvRfQYx1vzw7FBwF9eAgqoNn9MqD3ArovAZ3ROwF96OFvfz+fmeUvvFt6pcA5SuyXAb0V0H0J6IzeCejjKfnx58uDzLdfePi+59lj0Off6Bxl9auAHlbb90D3JKAzWg7oUznPDsvCF95evIHp0at3s5y/FZ/Z/SKgdw2vwlv4oQR0RpfvA316SnGA9dMAAAOtSURBVP70Hc2Hfz6dqKXSvhya53PnHCX2JqCXvj/9soDuQUBntBzQp1ePDh9H+v78hQsPVW9fnxjnKLFfB/T78y8L6B4EdEaLAX05SC8fiH/3HfdPV3h+gudbYVn9KqDfz37Z90D3IKAzWuzi0mc03w3owd1zfZ2jxN75HujdeT8FdC8COqOlLh7vI/Li27tfeObu5vllJ+coq/deRDq8Av/e+9nuBPRKBHRGS1083aPuyeOZWnob0/mJOX3b1DlK7N1X4e9v3n07xq3P8F6JgM7onRfXL+5q933xC99+0k9Ak3v/bUxnz+IfP2Px5PmtwhZ+NAGd0UJAH47R5Yfcj+flzRfe35yftqcPdjpHib0f0MN/R0//1+X2eH6jm4UfTUBntHybz7OHGA8n5Hhe3nzh4fY8L1/3lFPnKLFfvJH+7Nugt2frfgjr16evtvBDCeiMlj9gdPZLT0fk7Rfev7zx6RBTryWk96uPcr48iT9+i/z5lcWzW8Ja+KEEdEaLH3E/f2r+9Njy/u0LS5dvFHx+ILL49msS+FVAz57EX67xt58Lv2jh+xPQGX18k6XDo8vviwG9+DXnKL9f3o3p7En8/cL6WvjRBHRGbwJ69unNk8fveS0F9PTc/ebycyrOUVa/DOjF++lP73S7fLHRwg8loABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChD0/wF+94hjeHsImgAAAABJRU5ErkJggg==" width="672" /></p>
 <p>More arrests appear to be occurring in the beginning of the time period.</p>
+<p>Table of Crimes with and without Arrest by Year</p>
+<pre class="r"><code>table(mvt$Year, mvt$Arrest)</code></pre>
+<pre><code>##       
+##        FALSE  TRUE
+##   2001 18517  2152
+##   2002 16638  2115
+##   2003 14859  1798
+##   2004 15169  1693
+##   2005 14956  1528
+##   2006 14796  1302
+##   2007 13068  1212
+##   2008 13425  1020
+##   2009 11327   840
+##   2010 14796   701
+##   2011 15012   625
+##   2012 13542   550</code></pre>
+<p>The proportion of crimes with arrest made in 2001 was 0.1041173. The proportion of crimes with arrest made in 2007 was 0.0848739.</p>
+<p>Table of Motor Vehicle Thefts by Location</p>
+<pre class="r"><code>sort(table(mvt$LocationDescription))</code></pre>
+<pre><code>## 
+##     AIRPORT BUILDING NON-TERMINAL - SECURE AREA 
+##                                               1 
+##                  AIRPORT EXTERIOR - SECURE AREA 
+##                                               1 
+##                                 ANIMAL HOSPITAL 
+##                                               1 
+##                                 APPLIANCE STORE 
+##                                               1 
+##                                       CTA TRAIN 
+##                                               1 
+##                         JAIL / LOCK-UP FACILITY 
+##                                               1 
+##                                       NEWSSTAND 
+##                                               1 
+##                                          BRIDGE 
+##                                               2 
+##               COLLEGE/UNIVERSITY RESIDENCE HALL 
+##                                               2 
+##                               CURRENCY EXCHANGE 
+##                                               2 
+##                                   BOWLING ALLEY 
+##                                               3 
+##                                  CLEANING STORE 
+##                                               3 
+##                           MEDICAL/DENTAL OFFICE 
+##                                               3 
+##                              ABANDONED BUILDING 
+##                                               4 
+## AIRPORT BUILDING NON-TERMINAL - NON-SECURE AREA 
+##                                               4 
+##                                      BARBERSHOP 
+##                                               4 
+##                  LAKEFRONT/WATERFRONT/RIVERBANK 
+##                                               4 
+##                                         LIBRARY 
+##                                               4 
+##                                SAVINGS AND LOAN 
+##                                               4 
+##  AIRPORT TERMINAL UPPER LEVEL - NON-SECURE AREA 
+##                                               5 
+##                                   CHA APARTMENT 
+##                                               5 
+##                                 DAY CARE CENTER 
+##                                               5 
+##                                    FIRE STATION 
+##                                               5 
+##                                 FOREST PRESERVE 
+##                                               6 
+##                                            BANK 
+##                                               7 
+##                               CONVENIENCE STORE 
+##                                               7 
+##                                      DRUG STORE 
+##                                               8 
+##                 OTHER COMMERCIAL TRANSPORTATION 
+##                                               8 
+##                                   ATHLETIC CLUB 
+##                                               9 
+##                   AIRPORT VENDING ESTABLISHMENT 
+##                                              10 
+##                             AIRPORT PARKING LOT 
+##                                              11 
+##                       SCHOOL, PRIVATE, BUILDING 
+##                                              14 
+##                             TAVERN/LIQUOR STORE 
+##                                              14 
+##                  FACTORY/MANUFACTURING BUILDING 
+##                                              16 
+##                                   BAR OR TAVERN 
+##                                              17 
+##                                       WAREHOUSE 
+##                                              17 
+##                             MOVIE HOUSE/THEATER 
+##                                              18 
+##                         RESIDENCE PORCH/HALLWAY 
+##                                              18 
+##                    NURSING HOME/RETIREMENT HOME 
+##                                              21 
+##                                         TAXICAB 
+##                                              21 
+##                                DEPARTMENT STORE 
+##                                              22 
+##                              HIGHWAY/EXPRESSWAY 
+##                                              22 
+##                        SCHOOL, PRIVATE, GROUNDS 
+##                                              23 
+##                              VEHICLE-COMMERCIAL 
+##                                              23 
+##              AIRPORT EXTERIOR - NON-SECURE AREA 
+##                                              24 
+##               OTHER RAILROAD PROP / TRAIN DEPOT 
+##                                              28 
+##                              SMALL RETAIL STORE 
+##                                              33 
+##                               CONSTRUCTION SITE 
+##                                              35 
+##                                        CAR WASH 
+##                                              44 
+##                      COLLEGE/UNIVERSITY GROUNDS 
+##                                              47 
+##                    GOVERNMENT BUILDING/PROPERTY 
+##                                              48 
+##                                      RESTAURANT 
+##                                              49 
+##               CHURCH/SYNAGOGUE/PLACE OF WORSHIP 
+##                                              56 
+##                              GROCERY FOOD STORE 
+##                                              80 
+##                       HOSPITAL BUILDING/GROUNDS 
+##                                             101 
+##                        SCHOOL, PUBLIC, BUILDING 
+##                                             114 
+##                                     HOTEL/MOTEL 
+##                                             124 
+##                    COMMERCIAL / BUSINESS OFFICE 
+##                                             126 
+##                     CTA GARAGE / OTHER PROPERTY 
+##                                             148 
+##                            SPORTS ARENA/STADIUM 
+##                                             166 
+##                                       APARTMENT 
+##                                             184 
+##                         SCHOOL, PUBLIC, GROUNDS 
+##                                             206 
+##                                   PARK PROPERTY 
+##                                             255 
+##                 POLICE FACILITY/VEH PARKING LOT 
+##                                             266 
+##                                AIRPORT/AIRCRAFT 
+##                                             363 
+##                         CHA PARKING LOT/GROUNDS 
+##                                             405 
+##                                        SIDEWALK 
+##                                             462 
+##                          VEHICLE NON-COMMERCIAL 
+##                                             817 
+##                                 VACANT LOT/LAND 
+##                                             985 
+##                                RESIDENCE-GARAGE 
+##                                            1176 
+##                                       RESIDENCE 
+##                                            1302 
+##                   RESIDENTIAL YARD (FRONT/BACK) 
+##                                            1536 
+##                          DRIVEWAY - RESIDENTIAL 
+##                                            1675 
+##                                     GAS STATION 
+##                                            2111 
+##                                           ALLEY 
+##                                            2308 
+##                                           OTHER 
+##                                            4573 
+##                  PARKING LOT/GARAGE(NON.RESID.) 
+##                                           14852 
+##                                          STREET 
+##                                          156564</code></pre>
+<p>The top 5 locations are: STREET, PARKING LOT/GARAGE(NON.RESID.), ALLEY, GAS STATION and DRIVEWAY - RESIDENTIAL.</p>
+<pre class="r"><code>topLocations &lt;- c(&quot;STREET&quot;, &quot;PARKING LOT/GARAGE(NON.RESID.)&quot;, &quot;ALLEY&quot;, &quot;GAS STATION&quot;, &quot;DRIVEWAY - RESIDENTIAL&quot;)
+top5 &lt;- subset(mvt, LocationDescription %in% topLocations)
+
+# Remove the unused factor variables from LocationDescription
+top5$LocationDescription &lt;- factor(top5$LocationDescription)</code></pre>
+<p>Table of Arrests for Top 5 Locations</p>
+<pre class="r"><code>table(top5$LocationDescription, top5$Arrest)</code></pre>
+<pre><code>##                                 
+##                                   FALSE   TRUE
+##   ALLEY                            2059    249
+##   DRIVEWAY - RESIDENTIAL           1543    132
+##   GAS STATION                      1672    439
+##   PARKING LOT/GARAGE(NON.RESID.)  13249   1603
+##   STREET                         144969  11595</code></pre>
+<p>Arrest rate at GAS STATION is highest 0.2079583.</p>
+<p>Table of Motor Vehicle Thefts by Weekday</p>
+<pre class="r"><code>table(top5$LocationDescription, top5$Day)</code></pre>
+<pre><code>##                                 
+##                                  Friday Monday Saturday Sunday Thursday
+##   ALLEY                             385    320      341    307      315
+##   DRIVEWAY - RESIDENTIAL            257    255      202    221      263
+##   GAS STATION                       332    280      338    336      282
+##   PARKING LOT/GARAGE(NON.RESID.)   2331   2128     2199   1936     2082
+##   STREET                          23773  22305    22175  21756    22296
+##                                 
+##                                  Tuesday Wednesday
+##   ALLEY                              323       317
+##   DRIVEWAY - RESIDENTIAL             243       234
+##   GAS STATION                        270       273
+##   PARKING LOT/GARAGE(NON.RESID.)    2073      2103
+##   STREET                           21888     22371</code></pre>
+<p>The most motor vehicle thefts at GAS STATION happen on Saturday. The fewest motor vehicle thefts at DRIVEWAY - RESIDENTIAL happen on Saturday.</p>
 </div>
 
 

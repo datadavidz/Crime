@@ -88,3 +88,44 @@ boxplot(mvt$Date ~ mvt$Arrest)
 
 More arrests appear to be occurring in the beginning of the time period.
 
+Table of Crimes with and without Arrest by Year
+```{r}
+table(mvt$Year, mvt$Arrest)
+```
+
+The proportion of crimes with arrest made in 2001 was `r 2152/(18517+2152)`.  The proportion of crimes with arrest made in 2007 was `r 1212/(13068+1212)`.
+
+Table of Motor Vehicle Thefts by Location
+```{r}
+sort(table(mvt$LocationDescription))
+```
+
+The top 5 locations are: STREET, PARKING LOT/GARAGE(NON.RESID.), ALLEY, GAS STATION and DRIVEWAY - RESIDENTIAL.
+```{r}
+topLocations <- c("STREET", "PARKING LOT/GARAGE(NON.RESID.)", "ALLEY", "GAS STATION", "DRIVEWAY - RESIDENTIAL")
+top5 <- subset(mvt, LocationDescription %in% topLocations)
+
+# Remove the unused factor variables from LocationDescription
+top5$LocationDescription <- factor(top5$LocationDescription)
+```
+
+Table of Arrests for Top 5 Locations
+```{r}
+table(top5$LocationDescription, top5$Arrest)
+```
+Arrest rate at GAS STATION is highest `r 439/(439+1672)`.
+
+Table of Motor Vehicle Thefts by Weekday
+```{r}
+table(top5$LocationDescription, top5$Day)
+```
+
+The most motor vehicle thefts at GAS STATION happen on Saturday.
+The fewest motor vehicle thefts at DRIVEWAY - RESIDENTIAL happen on Saturday.
+
+
+
+
+
+
+
